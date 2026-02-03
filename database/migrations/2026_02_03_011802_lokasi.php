@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('guru', function (Blueprint $table) {
+        Schema::create('lokasi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('tingkat');
-            $table->foreignId('tahun_ajar_id')->constrained('tahun_ajar');
+            $table->string('nama_lokasi');
+            $table->double('latitude', 10, 7);
+            $table->double('longitude', 10, 7);
+            $table->integer('radius');
             $table->timestamps();
         });
     }
