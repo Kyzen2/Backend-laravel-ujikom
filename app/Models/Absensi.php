@@ -30,6 +30,12 @@ class Absensi extends Model
         return $this->belongsTo(Kelas::class);
     }
 
+    // Relasi ke Sesi Presensi
+    public function sesi()
+    {
+        return $this->belongsTo(Sesi::class, 'sesi_id');
+    }
+
     // Relasi ke Tahun Ajaran
     public function tahunAjaran()
     {

@@ -9,8 +9,8 @@ class Jadwal extends Model
 {
     use HasFactory;
 
-    protected $table = 'Jadwal';
-    protected $fillable = ['kelas_id', 'mapel_id', 'guru_id', 'hari', 'jam_mulai', 'jam_selesai'];
+    protected $table = 'jadwal';
+    protected $fillable = ['kelas_id', 'mapel_id', 'guru_id', 'lokasi_id', 'hari', 'jam_mulai', 'jam_selesai'];
 
     public function kelas()
     {
@@ -23,5 +23,9 @@ class Jadwal extends Model
     public function guru()
     {
         return $this->belongsTo(Guru::class, 'guru_id');
+    }
+    public function lokasi()
+    {
+        return $this->belongsTo(Lokasi::class, 'lokasi_id');
     }
 }

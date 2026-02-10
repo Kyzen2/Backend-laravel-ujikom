@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class mapel extends Model
+class Mapel extends Model
 {
     protected $table = 'Mapel';
 
