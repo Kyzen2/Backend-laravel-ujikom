@@ -9,7 +9,7 @@ class sesi extends Model
 {
     use HasFactory;
 
-    protected $table = 'Sesi';
+    protected $table = 'sesi_presensi';
     protected $fillable = ['jadwal_id', 'tanggal', 'token_qr'];
 
     public function jadwal()

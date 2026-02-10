@@ -55,8 +55,8 @@ class AttendanceController extends Controller
         ]);
 
         return response()->json([
-            'status'  ? 'success' : 'error',
-            'message'  ? 'Absen Berhasil' : 'Anda di luar radius sekolah!',
+            'status' => 'success',
+            'message' => 'Absen Berhasil',
             // 'jarak_meter' => round($jarak)
         ]);
     }

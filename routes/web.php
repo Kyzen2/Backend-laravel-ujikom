@@ -30,9 +30,19 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/attendance/session', [AttendanceController::class, 'createSesi']);
-    // Route::post('/attendance/scan', [AttendanceController::class, 'scanQR']);
-    Route::get('/attendance/history', [AttendanceController::class, 'historySiswa']);
-    Route::post('/logout', [AuthController::class, 'logout']);
-});
+// Route::middleware('auth:sanctum')->group(function () {
+//     Route::post('/attendance/session', [AttendanceController::class, 'createSesi']);
+//     // Route::post('/attendance/scan', [AttendanceController::class, 'scanQR']);
+//     Route::get('/attendance/history', [AttendanceController::class, 'historySiswa']);
+//     Route::post('/logout', [AuthController::class, 'logout']);
+// });
+
+// API Routes
+// Route::prefix('api')->group(function () {
+//     Route::get('/', function () {
+//         return response()->json(['message' => 'API is running']);
+//     });
+//     Route::post('/attendance/session', [AttendanceController::class, 'createSesi']);
+//     Route::post('/attendance/scan', [AttendanceController::class, 'scanQR']);
+//     Route::get('/attendance/history', [AttendanceController::class, 'historySiswa']);
+// });
