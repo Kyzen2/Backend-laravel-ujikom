@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\TahunAjaranController;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,4 +24,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::put('/tahun-ajaran/{id}', [TahunAjaranController::class, 'update'])->name('tahun-ajaran.update');
     Route::delete('/tahun-ajaran/{id}', [TahunAjaranController::class, 'destroy'])->name('tahun-ajaran.destroy');
 });
-require __DIR__ . '/auth.php';
+
+
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    // 2. Route Absensi
+    Route::post('/attendance/session', [AttendanceController::class, 'createSesi']);
+    Route::post('/attendance/scan', [AttendanceController::class, 'scanQR']);
+    Route::get('/attendance/history', [AttendanceController::class, 'historySiswa']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
